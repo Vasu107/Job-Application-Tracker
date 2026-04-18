@@ -137,13 +137,17 @@ function updateStatus(id, newStatus) {
 }
 
 // ── Modal ─────────────────────────────────────────────
+function getModal() {
+    return bootstrap.Modal.getOrCreateInstance(document.getElementById('appModal'));
+}
+
 function openAddModal() {
     editingId = null;
     document.getElementById('modal-title').innerHTML = '<i class="bi bi-plus-circle"></i> Add New Application';
     document.getElementById('save-btn').innerHTML = '<i class="bi bi-check-lg"></i> Add Application';
     document.getElementById('app-form').reset();
     document.getElementById('applied-date').value = new Date().toISOString().split('T')[0];
-    new bootstrap.Modal(document.getElementById('appModal')).show();
+    getModal().show();
 }
 
 function openEditModal(id) {
@@ -157,13 +161,11 @@ function openEditModal(id) {
     document.getElementById('location').value     = app.location || '';
     document.getElementById('applied-date').value = app.appliedDate;
     document.getElementById('status').value       = app.status;
-    new bootstrap.Modal(document.getElementById('appModal')).show();
+    getModal().show();
 }
 
 function closeModal() {
-    const el = document.getElementById('appModal');
-    const modal = bootstrap.Modal.getInstance(el);
-    if (modal) modal.hide();
+    getModal().hide();
     editingId = null;
 }
 
