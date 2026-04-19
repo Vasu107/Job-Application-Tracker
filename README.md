@@ -162,13 +162,13 @@ The application is built using a modular and event-driven approach.
 ## Screenshots
 
 ### Dashboard
-![Dashboard](screenshot/dashboard.png)
+![Dashboard](screenshot/Dashboard.png)
 
 ### Applications Table
-![Application](screenshot/application.png)
+![Application](screenshot/Application.png)
 
 ### Kanban Board
-![Kanban](screenshot/kanban.png)
+![Kanban](screenshot/Kanban.png)
 
 ---
 
